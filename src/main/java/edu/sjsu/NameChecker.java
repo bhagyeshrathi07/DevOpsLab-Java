@@ -15,13 +15,13 @@ public class NameChecker {
         if (input.length() < 2 || input.length() > 40) {
             return false;
         }
-
+    
         // Check for invalid starting character
         char firstChar = input.charAt(0);
         if (!Character.isLetter(firstChar) && firstChar != '\'' && firstChar != '-') {
             return false;
         }
-
+    
         // Check for consecutive hyphens or single quotes
         for (int i = 0; i < input.length() - 1; i++) {
             char currentChar = input.charAt(i);
@@ -30,14 +30,15 @@ public class NameChecker {
                 return false;
             }
         }
-
+    
         // Check for invalid characters
         for (char c : input.toCharArray()) {
             if (!Character.isLetter(c) && c != '\'' && c != '-') {
                 return false;
             }
         }
-
+    
         return true;
     }
+    
 }
